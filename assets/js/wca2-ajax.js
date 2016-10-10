@@ -27,15 +27,15 @@
 				return;
 			}
 
-			$.post(
-				wca2.ajaxUrl,
+			$.get(
+				'/wp-json/posts/',
 				{
-					'action' : 'wca2-search',
-					's' : value
+					'search' : value,
+					'per_page' : '5'
 				},
 				function ( response ) {
 					WCA2AJAX.removeSuggestedResults();
-					WCA2AJAX.addSuggestedResults( response.data.results );
+					WCA2AJAX.addSuggestedResults( response );
 				}
 			);
 		},
