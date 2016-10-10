@@ -1,0 +1,47 @@
+$color__suggestions-background: #fff;
+$color__suggestions-text: #999;
+$color__link: #222;
+$color__link-active: #007acc;
+
+.widget_search {
+
+	.search-suggestions {
+		background: $color__suggestions-background;
+		color: $color__suggestions-text;
+		width: 100%;
+		border: 1px solid darken( $color__suggestions-background, 10% );
+		border-top: 0;
+		position: relative;
+
+		p {
+			margin: 0;
+			padding: 0.5em 1em;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				&:not(:last-of-type) {
+					border-bottom: 1px solid darken( $color__suggestions-background, 10% );
+				}
+			}
+		}
+
+		a {
+			display: block;
+			color: $color__link;
+			padding: 1em;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background: darken( $color__suggestions-background, 5% );
+				color: $color__link-active;
+				outline: none;
+			}
+		}
+	}
+}
